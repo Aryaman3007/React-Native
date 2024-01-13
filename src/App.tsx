@@ -84,22 +84,6 @@ const styles = StyleSheet.create({
     borderColor: "#ebdcf4",
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  left: {
-    position: 'absolute',
-    height:30,
-    width: 30,
-    borderTopRightRadius:30,
-    backgroundColor:'red',
-    top: 40,
-    left: -20,
-  },
-  right: {
-    position: 'absolute',
-    height:30,
-    width: 30,
-    borderTopLeftRadius:30,
-    backgroundColor:'red'
   }
 })
 
