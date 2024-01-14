@@ -4,11 +4,13 @@ import { StyleSheet, View, Text } from 'react-native';
 //Navigation
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator} from '@react-navigation/native-stack'
 
 //Screens
 import Home from './screens/Home';
 import History from './screens/History';
 import Profile from './screens/Profile';
+import CallScreen from './screens/CallScreen';
 
 //Icons
 import Fontisto from 'react-native-vector-icons/Fontisto'
@@ -17,11 +19,19 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
 
 const Tab = createBottomTabNavigator()
+const Stack = createNativeStackNavigator()
 
 function App() {
 
   return (
     <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen name='Home' component={Home} />
+        <Stack.Screen name='CallScreen' component={CallScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+
+    /*<NavigationContainer>
       <Tab.Navigator
         screenOptions={{
           tabBarActiveTintColor: '#6707aa',
@@ -51,6 +61,8 @@ function App() {
         </Tab.Group>
       </Tab.Navigator>
     </NavigationContainer>
+    */
+
   )
 
 }
